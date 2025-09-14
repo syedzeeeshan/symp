@@ -6,16 +6,20 @@ from rest_framework.response import Response
 from django.shortcuts import get_object_or_404
 from django.utils import timezone
 from django.http import JsonResponse
+<<<<<<< HEAD
 from .models import Brochure, Event, TeamLeader, Registration
 from .serializers import (BrochureSerializer, EventSerializer, 
                          TeamLeaderSerializer, RegistrationSerializer, 
                          RegistrationCreateSerializer)
 from .utils import validate_registration_data
+=======
+>>>>>>> 86277b39c3415baeedec690ba88e263f8de91963
 
 # Health Check (MISSING FUNCTION)
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def health_check(request):
+<<<<<<< HEAD
     """Health check endpoint"""
     try:
         return JsonResponse({
@@ -159,3 +163,10 @@ def get_registration(request, registration_id):
             'success': False,
             'error': 'Registration not found'
         }, status=status.HTTP_404_NOT_FOUND)
+=======
+    return JsonResponse({
+        'status': 'ok',
+        'message': 'Django API is running',
+        'mongodb': {'connected': True, 'message': 'Connected successfully'}
+    })
+>>>>>>> 86277b39c3415baeedec690ba88e263f8de91963
